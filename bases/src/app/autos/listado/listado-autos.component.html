@@ -2,6 +2,6 @@
         <hr>
         <ul>
             <li *ngFor="let auto of autos">
-                {{auto.marca}} - {{auto.modelo}} - {{auto.precio | number}}
+                {{auto.marca | titlecase}} - {{auto.modelo | uppercase}} - {{auto.precio | currency}}
             </li>
         </ul>

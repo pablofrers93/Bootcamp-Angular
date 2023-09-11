@@ -13,6 +13,9 @@ export class ListadoAutosComponent {
   @Input()
   autos: IAuto[] = [];
 
+  @Input()
+  titulo: string = '';
+
   borrar(){
     const auto = this.autos.shift();
     if (auto !== undefined)
