@@ -8,6 +8,8 @@ import { IEmpleado } from '../interfaces/empleado';
 })
 export class ListadoComponent {
 
+  
+
   etiquetaBorrado: string = '';
 
   @Input()

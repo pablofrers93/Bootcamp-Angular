@@ -1,5 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { ICliente } from '../interfaces/cliente';
+import { ClientesService } from '../clientes.service';
 
 @Component({
   selector: 'app-listado-clientes',
@@ -8,6 +9,14 @@ import { ICliente } from '../interfaces/cliente';
 })
 export class ListadoClientesComponent {
 
-  @Input()
-  clientes: ICliente[] = [];
+  //@Input()
+  //clientes: ICliente[] = [];
+  constructor(private clientesService: ClientesService){
+
+  }
+
+  get clientes(): ICliente[]{
+    return this.clientesService.clientes;
+  }
+ 
 }
