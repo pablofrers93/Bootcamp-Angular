@@ -1,5 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { IAuto } from '../interface/auto';
+import { AutosService } from '../autos.service';
 
 @Component({
   selector: 'app-listado-autos',
@@ -8,22 +9,11 @@ import { IAuto } from '../interface/auto';
 })
 export class ListadoAutosComponent {
 
-  etiquetaBorrado: string = '';
+  constructor(private autosService: AutosService){
 
-  @Input()
-  autos: IAuto[] = [];
+  }
 
-  @Input()
-  titulo: string = '';
-
-  borrar(){
-    const auto = this.autos.shift();
-    if (auto !== undefined)
-    {
-      this.etiquetaBorrado = auto.marca+ ' '+ auto.modelo;
-    }
-    else{
-      this.etiquetaBorrado = '';
-    }
+  get autos(): IAuto[]{
+    return this.autosService.autos;
   }
 }

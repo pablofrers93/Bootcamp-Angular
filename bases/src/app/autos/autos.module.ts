@@ -4,6 +4,8 @@ import { ListadoAutosComponent } from './listado/listado-autos.component';
 import { PaginaInicioAutosComponent } from './pagina-inicio-autos/pagina-inicio-autos.component';
 import { FormsModule } from '@angular/forms';
 import { AutoComponent } from './auto/auto.component';
+import { AgregarAutoComponent } from './agregar-auto/agregar-auto.component';
+import { AutosService } from './autos.service';
 
 
 
@@ -11,7 +13,8 @@ import { AutoComponent } from './auto/auto.component';
   declarations: [
     AutoComponent,
     ListadoAutosComponent,
-    PaginaInicioAutosComponent
+    PaginaInicioAutosComponent,
+    AgregarAutoComponent
   ],
   imports: [
     CommonModule,
@@ -21,6 +24,9 @@ import { AutoComponent } from './auto/auto.component';
     AutoComponent,
     ListadoAutosComponent,
     PaginaInicioAutosComponent
+  ],
+  providers: [
+    AutosService
   ]
 })
 export class AutosModule { }
